@@ -1,0 +1,17 @@
+#!/bin/bash
+read -p "Enter a file name: " filename
+file $filename
+if (test -d "$filename")
+then
+echo $filename is a directory
+
+
+elif (test -f "$filename")
+then
+echo $filename is a file
+
+
+elif (test -L "$filename")
+then
+echo $filename is a symlink
+fi
